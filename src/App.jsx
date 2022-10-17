@@ -62,6 +62,13 @@ const App = () => {
             </div>
             <div className="items-end justify-end">
               <span className="text-xl font-extrabold">Opening hours</span>
+              &nbsp;
+              <span
+                className={`${
+                  businessData.isOpenNow ? "text-green-500" : "text-red-500"
+                } capitalize`}>
+                {businessData.isOpenNow ? "Open now" : "Closed"}
+              </span>
               {businessData.opening_hours.map((item) => (
                 <div className="grid grid-cols-2" key={item.daysInTheWeek}>
                   <span className="capitalize">
